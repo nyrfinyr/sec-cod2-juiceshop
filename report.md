@@ -1,11 +1,11 @@
-### Description
-### Proof of Concept 
-### Risk assessment
-### Mitigation
+# Summary
+* [XSS: iframe](#xss_iframe)
+* [Sensitive Data Exposure: robots.txt](#robots_txt)
+* [SQL Injection: 'OR true--](#sql_injection_1)
 
-# Vulnerabilità
+# Vulnerabilities
 
-## XSS: *iframe*
+## XSS: *iframe* <a name="xss_iframe"></a>
 ### Description
 La barra di ricerca nella pagina principale è vulnerabile agli xss usando gli iframe
 ### Proof of Concept 
@@ -16,7 +16,7 @@ Scrivere il seguente payload nella barra di ricerca
 ### Risk assessment
 ### Mitigation
 
-## Server misconfiguration: *robots.txt*
+## Server misconfiguration: *robots.txt* <a name="robots_txt"></a>
 ### Description
 E' possibile accedere al file robots.txt, il quale restituisce il seguente output:
 ```
@@ -31,7 +31,7 @@ Andare all'url /ftp
 ### Risk assessment
 ### Mitigation
 
-## Sql Injection: *'OR true--*
+## Sql Injection: *'OR true--* <a name="sql_injection_1"></a>
 ### Description
 E' possibile autenticarsi come admin sfruttando una sql injection 
 nella pagina di login. 
