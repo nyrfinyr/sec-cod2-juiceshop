@@ -5,7 +5,7 @@
 * [Weak password: admin admin](#weak_pwd)
 * [Broken access control: bender's review](#bender_review)
 * [SQL Injection: --dump-all](#sql_injection_whole)
-
+* [Improper input validation: register as admin](#input_validation_admin)
 
 # Vulnerabilities
 
@@ -112,8 +112,28 @@ il tool automatico *sqlmap.py*, passando come input [request.txt](payloads/reque
 ### Risk Assessment
 ### Mitigation
 
+## Improper input validation: register as admin <a name="input_validation_admin"></a>
+### Description
+E' possibile registrare un nuovo utente come admin. La vulnerabilità è dovuta ad una validazione errata della registrazione.
 
+### POC 
+Catturando una richiesta di registrazione di un nuovo utente è possibile vedere nella response
+il campo "role":"customer". 
 
+<img src="images/admin_request.png" width="600" />
+
+L'attacco è eseguito inserendo il campo "role":"admin" nel body
+della richiesta.
+
+<img src="images/admin_payload.png" width="600" />
+
+Questo è sufficiente per ottenere i privilegi di amministratore, come è possibile vedere 
+dalla lista di utenti in /administration.
+
+<img src="images/admin_proof.png" width="400" />
+
+### Risk Assessment
+### Mitigation
 
 
 
