@@ -12,6 +12,9 @@
 ## XSS: *iframe* <a name="xss_iframe"></a>
 ### Description
 La barra di ricerca nella pagina principale è vulnerabile agli xss usando gli iframe
+
+<img src="images/xss_iframe.png" width="1200"/>
+
 ### Proof of Concept 
 Scrivere il seguente payload nella barra di ricerca
 ```javascript
@@ -28,7 +31,8 @@ User-agent: *
 Disallow: /ftp
 ```
 Andando nella cartella /ftp è possibile accedere a diversi file
-![](images/robots.png)
+<img src="images/robots.png" width="1000"/>
+
 ### Proof of Concept
 Andare all'url /robots.txt \
 Andare all'url /ftp
@@ -47,7 +51,9 @@ scrivere nel campo email
 ```
 Andando su /profile si vede che si è stati autenticati come admin,
 con email admin@juice-sh.op.
-![](images/sql-inj1.png)
+
+<img src="images/sql-inj1.png" width="400"/>
+
 ### Risk Assessment
 ### Mitigation
 
@@ -70,27 +76,39 @@ Ho prima effettuato l'ordine di un prodotto. Poi andando su
 Account > Orders and Payments > Order history
 è possibile scrivere una review per uno dei prodotti acquistati.
 Ho scritto la review e ho intercettato la richiesta
-![](images/benders_review_request.png)
+
+<img src="images/benders_review_request.png" width="600"/>
+
 e prima di inviarla ho modificato nel body il campo *author* inserendo la mail di un altro utente,
 ovvero bender@juice-sh.op. Risultato:
-![](images/benders_review_final.png)
+
+<img src="images/benders_review_final.png" width="350"/>
+
 ### Risk assessment
 ### Mitigation
 
 ## SQL Injection: dump whole db <a name="sql_injection_whole"></a>
 L'endpoint */rest/products/search?q=\** per la ricerca dei prodotti è vulnerabile alle boolean-based blind sql injections.
 E' possibile ottenere il dump di tutte le tabelle del db. L'attacco è stato condotto sfruttando 
-il tool automatico *sqlmap.py*, passando come input ![request.txt](payloads/request.txt) catturata con Burp.
+il tool automatico *sqlmap.py*, passando come input [request.txt](payloads/request.txt) catturata con Burp.
 ### POC 
-* Per ottenere il tipo di dbms: \
-    `python sqlmap.py -r request.txt --level=5 risk=3 --banner` \
-    Il DBMS è SQLite
-* Per ottenere la lista delle tabelle: \
-    `python sqlmap.py -r request.txt --level=5 risk=3 --dbms=SQLITE --tables` \
-    ![](images/tables.png)
-* Per ottenere la tabella Users: \
-    `python sqlmap.py -r request.txt --level=5 risk=3 --banner --ignore-code 401 -T Users --dbms=SQLITE -dump` \
-    File CSV contenente la tabella Users: ![Users.csv](files/Users.csv)
+* Per ottenere il tipo di dbms: 
+    ```
+    python sqlmap.py -r request.txt --level=5 risk=3 --banner
+    ```
+    Con cui si scopre che il DBMS è SQLIte.
+
+* Per ottenere la lista delle tabelle: 
+    ```
+    python sqlmap.py -r request.txt --level=5 risk=3 --dbms=SQLITE --tables
+    ```
+    <img src="images/tables.png" width="150" />
+
+* Per ottenere la tabella Users: 
+    ```
+    python sqlmap.py -r request.txt --level=5 risk=3 --banner --ignore-code 401 -T Users --dbms=SQLITE -dump
+    ``` 
+    File CSV contenente la tabella Users: [Users.csv](files/Users.csv)
 ### Risk Assessment
 ### Mitigation
 
