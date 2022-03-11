@@ -1,4 +1,7 @@
 # Summary
+
+**Vulnerabilità**
+
 * [XSS: iframe](#xss_iframe)
 * [Sensitive Data Exposure: robots.txt](#robots_txt)
 * [SQL Injection: 'OR true--](#sql_injection_1)
@@ -7,6 +10,7 @@
 * [SQL Injection: --dump-all](#sql_injection_whole)
 * [Improper input validation: register as admin](#input_validation_admin)
 
+[Note sulla Risk Rating Methodology adottata](#risk_rating_notes)
 # Vulnerabilities
 
 ## XSS: *iframe* <a name="xss_iframe"></a>
@@ -23,15 +27,15 @@ Scrivere il seguente payload nella barra di ricerca
 ### Risk assessment
 **Likelihood**
 
-|   | Skill Level   | Motive   | Opportunity   | Size   | Ease of Discovery   | Ease of Exploit   | Mean   | Estimation   |
-|---|:-------------:|:--------:|:-------------:|:------:|:-------------------:|:-----------------:|:------:|:------------:|
-|   |               |          |               |        |                     |                   |        |              |
+|   | Skill Level   | Opportunity   | Ease of Discovery   | Ease of Exploit   | Mean   | Label   |
+|---|:-------------:|:-------------:|:-------------------:|:-----------------:|:------:|:-------:|
+|   |               |               |                     |                   |        |         |
 
 **Impact**
 
-|   | Loss of Confidentiality   | Loss of Integrity   | Loss of Availability   | Financial Damage   | Privacy Violation   | Mean   | Estimation   |
-|---|:-------------------------:|:-------------------:|:----------------------:|:------------------:|:-------------------:|:------:|:------------:|
-|   |                           |                     |                        |                    |                     |        |              |
+|   | Loss of Confidentiality   | Loss of Integrity   | Financial Damage   | Privacy Violation   | Mean   | Label |
+|---|:-------------------------:|:-------------------:|:------------------:|:-------------------:|:------:|:-----:|
+|   |                           |                     |                    |                     |        |       |
 
 **Risk**
 
@@ -61,15 +65,15 @@ Andare all'url /ftp
 ### Risk assessment
 **Likelihood**
 
-|   | Skill Level   | Motive   | Opportunity   | Size   | Ease of Discovery   | Ease of Exploit   | Mean   | Estimation   |
-|---|:-------------:|:--------:|:-------------:|:------:|:-------------------:|:-----------------:|:------:|:------------:|
-|   |               |          |               |        |                     |                   |        |              |
+|   | Skill Level   | Opportunity   | Ease of Discovery   | Ease of Exploit   | Mean   | Label   |
+|---|:-------------:|:-------------:|:-------------------:|:-----------------:|:------:|:-------:|
+|   |               |               |                     |                   |        |         |
 
 **Impact**
 
-|   | Loss of Confidentiality   | Loss of Integrity   | Loss of Availability   | Financial Damage   | Privacy Violation   | Mean   | Estimation   |
-|---|:-------------------------:|:-------------------:|:----------------------:|:------------------:|:-------------------:|:------:|:------------:|
-|   |                           |                     |                        |                    |                     |        |              |
+|   | Loss of Confidentiality   | Loss of Integrity   | Financial Damage   | Privacy Violation   | Mean   | Label |
+|---|:-------------------------:|:-------------------:|:------------------:|:-------------------:|:------:|:-----:|
+|   |                           |                     |                    |                     |        |       |
 
 **Risk**
 
@@ -98,6 +102,28 @@ con email admin@juice-sh.op.
 <img src="images/sql-inj1.png" width="400"/>
 
 ### Risk Assessment
+**Likelihood**
+
+|   | Skill Level   | Opportunity   | Ease of Discovery   | Ease of Exploit   | Mean   | Label   |
+|---|:-------------:|:-------------:|:-------------------:|:-----------------:|:------:|:-------:|
+|   |               |               |                     |                   |        |         |
+
+**Impact**
+
+|   | Loss of Confidentiality   | Loss of Integrity   | Financial Damage   | Privacy Violation   | Mean   | Label |
+|---|:-------------------------:|:-------------------:|:------------------:|:-------------------:|:------:|:-----:|
+|   |                           |                     |                    |                     |        |       |
+
+**Risk**
+
+|        |        | RISK   |              |        |
+|--------|--------|:------:|:------------:|:------:|
+|        | HIGH   |        |              |        |
+|Impact  | MEDIUM |        |              |        |
+|        | LOW    |        |              |        |
+|        |        | LOW    | MEDIUM       | HIGH   |
+|        |        |        | Likelihood   |        |
+
 ### Mitigation
 
 ## Weak password: admin admin <a name="weak_pwd"></a>
@@ -109,28 +135,7 @@ Facendo qualche tentativo sono riuscito ad autenticarmi come admin indovinando l
 * leggendo le recensioni di *Apple juice (1000 ml)*, si trova la mail admin@juice-sh.op
 * Loggarsi con la password *admin123*
 ### Risk assessment
-**Likelihood**
 
-|   | Skill Level   | Motive   | Opportunity   | Size   | Ease of Discovery   | Ease of Exploit   | Mean   | Estimation   |
-|---|:-------------:|:--------:|:-------------:|:------:|:-------------------:|:-----------------:|:------:|:------------:|
-|   |               |          |               |        |                     |                   |        |              |
-
-**Impact**
-
-|   | Loss of Confidentiality   | Loss of Integrity   | Loss of Availability   | Financial Damage   | Privacy Violation   | Mean   | Estimation   |
-|---|:-------------------------:|:-------------------:|:----------------------:|:------------------:|:-------------------:|:------:|:------------:|
-|   |                           |                     |                        |                    |                     |        |              |
-
-**Risk**
-
-|        |        | RISK   |              |        |
-|--------|--------|:------:|:------------:|:------:|
-|        | HIGH   |        |              |        |
-|Impact  | MEDIUM |        |              |        |
-|        | LOW    |        |              |        |
-|        |        | LOW    | MEDIUM       | HIGH   |
-|        |        |        | Likelihood   |        |
-### Mitigation
 
 ## Broken access control: bender's review <a name="bender_review"></a>
 ### Description
@@ -151,15 +156,15 @@ ovvero bender@juice-sh.op. Risultato:
 ### Risk assessment
 **Likelihood**
 
-|   | Skill Level   | Motive   | Opportunity   | Size   | Ease of Discovery   | Ease of Exploit   | Mean   | Estimation   |
-|---|:-------------:|:--------:|:-------------:|:------:|:-------------------:|:-----------------:|:------:|:------------:|
-|   |               |          |               |        |                     |                   |        |              |
+|   | Skill Level   | Opportunity   | Ease of Discovery   | Ease of Exploit   | Mean   | Label   |
+|---|:-------------:|:-------------:|:-------------------:|:-----------------:|:------:|:-------:|
+|   |               |               |                     |                   |        |         |
 
 **Impact**
 
-|   | Loss of Confidentiality   | Loss of Integrity   | Loss of Availability   | Financial Damage   | Privacy Violation   | Mean   | Estimation   |
-|---|:-------------------------:|:-------------------:|:----------------------:|:------------------:|:-------------------:|:------:|:------------:|
-|   |                           |                     |                        |                    |                     |        |              |
+|   | Loss of Confidentiality   | Loss of Integrity   | Financial Damage   | Privacy Violation   | Mean   | Label |
+|---|:-------------------------:|:-------------------:|:------------------:|:-------------------:|:------:|:-----:|
+|   |                           |                     |                    |                     |        |       |
 
 **Risk**
 
@@ -170,6 +175,7 @@ ovvero bender@juice-sh.op. Risultato:
 |        | LOW    |        |              |        |
 |        |        | LOW    | MEDIUM       | HIGH   |
 |        |        |        | Likelihood   |        |
+
 ### Mitigation
 
 ## SQL Injection: dump whole db <a name="sql_injection_whole"></a>
@@ -197,15 +203,15 @@ il tool automatico *sqlmap.py*, passando come input [request.txt](payloads/reque
 ### Risk assessment
 **Likelihood**
 
-|   | Skill Level   | Motive   | Opportunity   | Size   | Ease of Discovery   | Ease of Exploit   | Mean   | Estimation   |
-|---|:-------------:|:--------:|:-------------:|:------:|:-------------------:|:-----------------:|:------:|:------------:|
-|   |               |          |               |        |                     |                   |        |              |
+|   | Skill Level   | Opportunity   | Ease of Discovery   | Ease of Exploit   | Mean   | Label   |
+|---|:-------------:|:-------------:|:-------------------:|:-----------------:|:------:|:-------:|
+|   |               |               |                     |                   |        |         |
 
 **Impact**
 
-|   | Loss of Confidentiality   | Loss of Integrity   | Loss of Availability   | Financial Damage   | Privacy Violation   | Mean   | Estimation   |
-|---|:-------------------------:|:-------------------:|:----------------------:|:------------------:|:-------------------:|:------:|:------------:|
-|   |                           |                     |                        |                    |                     |        |              |
+|   | Loss of Confidentiality   | Loss of Integrity   | Financial Damage   | Privacy Violation   | Mean   | Label |
+|---|:-------------------------:|:-------------------:|:------------------:|:-------------------:|:------:|:-----:|
+|   |                           |                     |                    |                     |        |       |
 
 **Risk**
 
@@ -241,15 +247,15 @@ dalla lista di utenti in /administration.
 ### Risk assessment
 **Likelihood**
 
-|   | Skill Level   | Motive   | Opportunity   | Size   | Ease of Discovery   | Ease of Exploit   | Mean   | Estimation   |
-|---|:-------------:|:--------:|:-------------:|:------:|:-------------------:|:-----------------:|:------:|:------------:|
-|   |               |          |               |        |                     |                   |        |              |
+|   | Skill Level   | Opportunity   | Ease of Discovery   | Ease of Exploit   | Mean   | Label   |
+|---|:-------------:|:-------------:|:-------------------:|:-----------------:|:------:|:-------:|
+|   |               |               |                     |                   |        |         |
 
 **Impact**
 
-|   | Loss of Confidentiality   | Loss of Integrity   | Loss of Availability   | Financial Damage   | Privacy Violation   | Mean   | Estimation   |
-|---|:-------------------------:|:-------------------:|:----------------------:|:------------------:|:-------------------:|:------:|:------------:|
-|   |                           |                     |                        |                    |                     |        |              |
+|   | Loss of Confidentiality   | Loss of Integrity   | Financial Damage   | Privacy Violation   | Mean   | Label |
+|---|:-------------------------:|:-------------------:|:------------------:|:-------------------:|:------:|:-----:|
+|   |                           |                     |                    |                     |        |       |
 
 **Risk**
 
@@ -262,5 +268,32 @@ dalla lista di utenti in /administration.
 |        |        |        | Likelihood   |        |
 ### Mitigation
 
+# Note sulla Risk Rating Methodology adottata <a name="risk_rating_notes"></a>
+Per il Risk Rating è stata usata la [metodologia Owasp](https://owasp.org/www-community/OWASP_Risk_Rating_Methodology), usando per il calcolo della likelihood e dell'impact solo i campi ritenuti più
+significativi per il target del penetration test. 
+In particolare il significato di ciascun parametro è riportato di seguito
 
+**Likelihood**
+* *Skill Level* \
+    Stima della *skill* dell'attaccante per poter sfruttare la vulnerabilità
+* *Opportunity* \
+    Risorse necessarie (potenza di calcolo, tempo, persone) per trovare e sfruttare la vulnerabilità
+* *Ease of Discovery* \
+    Difficoltà nel trovare la vulnerabilità
+* *Ease of Exploit* \
+    Difficoltà nell'exploitare la vulnerabilità
 
+**Impact**
+* *Loss of Confidentiality* \
+    Quanti dati possono essere esfiltrati e quanto sono sensibili
+* *Loss of Integrity* \
+    Quanti dati possono essere corrotti
+* *Financial Damage* \
+    Stima del danno economico per l'azienda in seguito all'exploit
+* *Privacy Violation* \
+    Quanto la privacy degli utenti viene violata
+
+Viene fatta la seguente associazione Media -> Label
+* 0 to < 3 --> **LOW**
+* 3 to < 6 --> **MEDIUM**
+* 6 to   9 --> **HIGH**
