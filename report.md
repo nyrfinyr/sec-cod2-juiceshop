@@ -21,6 +21,28 @@ Scrivere il seguente payload nella barra di ricerca
 <iframe src="javascript:alert(`xss`)">
 ```
 ### Risk assessment
+**Likelihood**
+
+|   | Skill Level   | Motive   | Opportunity   | Size   | Ease of Discovery   | Ease of Exploit   | Mean   | Estimation   |
+|---|:-------------:|:--------:|:-------------:|:------:|:-------------------:|:-----------------:|:------:|:------------:|
+|   |               |          |               |        |                     |                   |        |              |
+
+**Impact**
+
+|   | Loss of Confidentiality   | Loss of Integrity   | Loss of Availability   | Financial Damage   | Privacy Violation   | Mean   | Estimation   |
+|---|:-------------------------:|:-------------------:|:----------------------:|:------------------:|:-------------------:|:------:|:------------:|
+|   |                           |                     |                        |                    |                     |        |              |
+
+**Risk**
+
+|        |        | RISK   |              |        |
+|--------|--------|:------:|:------------:|:------:|
+|        | HIGH   |        |              |        |
+|Impact  | MEDIUM |        |              |        |
+|        | LOW    |        |              |        |
+|        |        | LOW    | MEDIUM       | HIGH   |
+|        |        |        | Likelihood   |        |
+
 ### Mitigation
 
 ## Server misconfiguration: *robots.txt* <a name="robots_txt"></a>
@@ -37,6 +59,27 @@ Andando nella cartella /ftp è possibile accedere a diversi file
 Andare all'url /robots.txt \
 Andare all'url /ftp
 ### Risk assessment
+**Likelihood**
+
+|   | Skill Level   | Motive   | Opportunity   | Size   | Ease of Discovery   | Ease of Exploit   | Mean   | Estimation   |
+|---|:-------------:|:--------:|:-------------:|:------:|:-------------------:|:-----------------:|:------:|:------------:|
+|   |               |          |               |        |                     |                   |        |              |
+
+**Impact**
+
+|   | Loss of Confidentiality   | Loss of Integrity   | Loss of Availability   | Financial Damage   | Privacy Violation   | Mean   | Estimation   |
+|---|:-------------------------:|:-------------------:|:----------------------:|:------------------:|:-------------------:|:------:|:------------:|
+|   |                           |                     |                        |                    |                     |        |              |
+
+**Risk**
+
+|        |        | RISK   |              |        |
+|--------|--------|:------:|:------------:|:------:|
+|        | HIGH   |        |              |        |
+|Impact  | MEDIUM |        |              |        |
+|        | LOW    |        |              |        |
+|        |        | LOW    | MEDIUM       | HIGH   |
+|        |        |        | Likelihood   |        |
 ### Mitigation
 
 ## Sql Injection: *'OR true--* <a name="sql_injection_1"></a>
@@ -65,7 +108,28 @@ Facendo qualche tentativo sono riuscito ad autenticarmi come admin indovinando l
 ### POC
 * leggendo le recensioni di *Apple juice (1000 ml)*, si trova la mail admin@juice-sh.op
 * Loggarsi con la password *admin123*
-### Risk Assessment
+### Risk assessment
+**Likelihood**
+
+|   | Skill Level   | Motive   | Opportunity   | Size   | Ease of Discovery   | Ease of Exploit   | Mean   | Estimation   |
+|---|:-------------:|:--------:|:-------------:|:------:|:-------------------:|:-----------------:|:------:|:------------:|
+|   |               |          |               |        |                     |                   |        |              |
+
+**Impact**
+
+|   | Loss of Confidentiality   | Loss of Integrity   | Loss of Availability   | Financial Damage   | Privacy Violation   | Mean   | Estimation   |
+|---|:-------------------------:|:-------------------:|:----------------------:|:------------------:|:-------------------:|:------:|:------------:|
+|   |                           |                     |                        |                    |                     |        |              |
+
+**Risk**
+
+|        |        | RISK   |              |        |
+|--------|--------|:------:|:------------:|:------:|
+|        | HIGH   |        |              |        |
+|Impact  | MEDIUM |        |              |        |
+|        | LOW    |        |              |        |
+|        |        | LOW    | MEDIUM       | HIGH   |
+|        |        |        | Likelihood   |        |
 ### Mitigation
 
 ## Broken access control: bender's review <a name="bender_review"></a>
@@ -85,6 +149,27 @@ ovvero bender@juice-sh.op. Risultato:
 <img src="images/benders_review_final.png" width="350"/>
 
 ### Risk assessment
+**Likelihood**
+
+|   | Skill Level   | Motive   | Opportunity   | Size   | Ease of Discovery   | Ease of Exploit   | Mean   | Estimation   |
+|---|:-------------:|:--------:|:-------------:|:------:|:-------------------:|:-----------------:|:------:|:------------:|
+|   |               |          |               |        |                     |                   |        |              |
+
+**Impact**
+
+|   | Loss of Confidentiality   | Loss of Integrity   | Loss of Availability   | Financial Damage   | Privacy Violation   | Mean   | Estimation   |
+|---|:-------------------------:|:-------------------:|:----------------------:|:------------------:|:-------------------:|:------:|:------------:|
+|   |                           |                     |                        |                    |                     |        |              |
+
+**Risk**
+
+|        |        | RISK   |              |        |
+|--------|--------|:------:|:------------:|:------:|
+|        | HIGH   |        |              |        |
+|Impact  | MEDIUM |        |              |        |
+|        | LOW    |        |              |        |
+|        |        | LOW    | MEDIUM       | HIGH   |
+|        |        |        | Likelihood   |        |
 ### Mitigation
 
 ## SQL Injection: dump whole db <a name="sql_injection_whole"></a>
@@ -109,7 +194,28 @@ il tool automatico *sqlmap.py*, passando come input [request.txt](payloads/reque
     python sqlmap.py -r request.txt --level=5 risk=3 --banner --ignore-code 401 -T Users --dbms=SQLITE -dump
     ``` 
     File CSV contenente la tabella Users: [Users.csv](files/Users.csv)
-### Risk Assessment
+### Risk assessment
+**Likelihood**
+
+|   | Skill Level   | Motive   | Opportunity   | Size   | Ease of Discovery   | Ease of Exploit   | Mean   | Estimation   |
+|---|:-------------:|:--------:|:-------------:|:------:|:-------------------:|:-----------------:|:------:|:------------:|
+|   |               |          |               |        |                     |                   |        |              |
+
+**Impact**
+
+|   | Loss of Confidentiality   | Loss of Integrity   | Loss of Availability   | Financial Damage   | Privacy Violation   | Mean   | Estimation   |
+|---|:-------------------------:|:-------------------:|:----------------------:|:------------------:|:-------------------:|:------:|:------------:|
+|   |                           |                     |                        |                    |                     |        |              |
+
+**Risk**
+
+|        |        | RISK   |              |        |
+|--------|--------|:------:|:------------:|:------:|
+|        | HIGH   |        |              |        |
+|Impact  | MEDIUM |        |              |        |
+|        | LOW    |        |              |        |
+|        |        | LOW    | MEDIUM       | HIGH   |
+|        |        |        | Likelihood   |        |
 ### Mitigation
 
 ## Improper input validation: register as admin <a name="input_validation_admin"></a>
@@ -132,7 +238,28 @@ dalla lista di utenti in /administration.
 
 <img src="images/admin_proof.png" width="400" />
 
-### Risk Assessment
+### Risk assessment
+**Likelihood**
+
+|   | Skill Level   | Motive   | Opportunity   | Size   | Ease of Discovery   | Ease of Exploit   | Mean   | Estimation   |
+|---|:-------------:|:--------:|:-------------:|:------:|:-------------------:|:-----------------:|:------:|:------------:|
+|   |               |          |               |        |                     |                   |        |              |
+
+**Impact**
+
+|   | Loss of Confidentiality   | Loss of Integrity   | Loss of Availability   | Financial Damage   | Privacy Violation   | Mean   | Estimation   |
+|---|:-------------------------:|:-------------------:|:----------------------:|:------------------:|:-------------------:|:------:|:------------:|
+|   |                           |                     |                        |                    |                     |        |              |
+
+**Risk**
+
+|        |        | RISK   |              |        |
+|--------|--------|:------:|:------------:|:------:|
+|        | HIGH   |        |              |        |
+|Impact  | MEDIUM |        |              |        |
+|        | LOW    |        |              |        |
+|        |        | LOW    | MEDIUM       | HIGH   |
+|        |        |        | Likelihood   |        |
 ### Mitigation
 
 
