@@ -29,25 +29,25 @@ Scrivere il seguente payload nella barra di ricerca
 
 |   | Skill Level   | Opportunity   | Ease of Discovery   | Ease of Exploit   | Mean   | Label   |
 |---|:-------------:|:-------------:|:-------------------:|:-----------------:|:------:|:-------:|
-|   |               |               |                     |                   |        |         |
+|   |       9       |        9      |          9          |          9        |   9    |    HIGH |
 
 **Impact**
 
 |   | Loss of Confidentiality   | Loss of Integrity   | Financial Damage   | Privacy Violation   | Mean   | Label |
 |---|:-------------------------:|:-------------------:|:------------------:|:-------------------:|:------:|:-----:|
-|   |                           |                     |                    |                     |        |       |
+|   |                6          |          1          |         2          |          7          |   4    | MEDIUM|
 
-**Risk**
+**Risk** **HIGH**
 
 |        |        | RISK   |              |        |
 |--------|--------|:------:|:------------:|:------:|
 |        | HIGH   |        |              |        |
-|Impact  | MEDIUM |        |              |        |
+|Impact  | MEDIUM |        |              |    X   |
 |        | LOW    |        |              |        |
 |        |        | LOW    | MEDIUM       | HIGH   |
 |        |        |        | Likelihood   |        |
 
-### Mitigation
+
 
 ## Server misconfiguration: *robots.txt* <a name="robots_txt"></a>
 ### Description
@@ -67,24 +67,24 @@ Andare all'url /ftp
 
 |   | Skill Level   | Opportunity   | Ease of Discovery   | Ease of Exploit   | Mean   | Label   |
 |---|:-------------:|:-------------:|:-------------------:|:-----------------:|:------:|:-------:|
-|   |               |               |                     |                   |        |         |
+|   |        9      |        9      |         9           |         9         |    9   |   HIGH  |
 
 **Impact**
 
 |   | Loss of Confidentiality   | Loss of Integrity   | Financial Damage   | Privacy Violation   | Mean   | Label |
 |---|:-------------------------:|:-------------------:|:------------------:|:-------------------:|:------:|:-----:|
-|   |                           |                     |                    |                     |        |       |
+|   |             7              |         2            |         5           |          2           |  4      |   MEDIUM    |
 
-**Risk**
+**Risk** **HIGH** 
 
 |        |        | RISK   |              |        |
 |--------|--------|:------:|:------------:|:------:|
 |        | HIGH   |        |              |        |
-|Impact  | MEDIUM |        |              |        |
+|Impact  | MEDIUM |        |              |    X    |
 |        | LOW    |        |              |        |
 |        |        | LOW    | MEDIUM       | HIGH   |
 |        |        |        | Likelihood   |        |
-### Mitigation
+
 
 ## Sql Injection: *'OR true--* <a name="sql_injection_1"></a>
 ### Description
@@ -106,25 +106,23 @@ con email admin@juice-sh.op.
 
 |   | Skill Level   | Opportunity   | Ease of Discovery   | Ease of Exploit   | Mean   | Label   |
 |---|:-------------:|:-------------:|:-------------------:|:-----------------:|:------:|:-------:|
-|   |               |               |                     |                   |        |         |
+|   |        9       |        9       |         9            |          9         |    9    |     HIGH    |
 
 **Impact**
 
 |   | Loss of Confidentiality   | Loss of Integrity   | Financial Damage   | Privacy Violation   | Mean   | Label |
 |---|:-------------------------:|:-------------------:|:------------------:|:-------------------:|:------:|:-----:|
-|   |                           |                     |                    |                     |        |       |
+|   |             6              |         6            |        9            |         7            |    7    |   HIGH    |
 
-**Risk**
+**Risk** **CRITICAL**
 
 |        |        | RISK   |              |        |
 |--------|--------|:------:|:------------:|:------:|
-|        | HIGH   |        |              |        |
+|        | HIGH   |        |              |    X    |
 |Impact  | MEDIUM |        |              |        |
 |        | LOW    |        |              |        |
 |        |        | LOW    | MEDIUM       | HIGH   |
 |        |        |        | Likelihood   |        |
-
-### Mitigation
 
 ## Weak password: admin admin <a name="weak_pwd"></a>
 ### Description
@@ -158,25 +156,23 @@ ovvero bender@juice-sh.op. Risultato:
 
 |   | Skill Level   | Opportunity   | Ease of Discovery   | Ease of Exploit   | Mean   | Label   |
 |---|:-------------:|:-------------:|:-------------------:|:-----------------:|:------:|:-------:|
-|   |               |               |                     |                   |        |         |
+|   |        9       |       9        |           9          |         9          |   9     |    HIGH     |
 
 **Impact**
 
 |   | Loss of Confidentiality   | Loss of Integrity   | Financial Damage   | Privacy Violation   | Mean   | Label |
 |---|:-------------------------:|:-------------------:|:------------------:|:-------------------:|:------:|:-----:|
-|   |                           |                     |                    |                     |        |       |
+|   |              2             |          7           |        7            |         2            |   4     |  MEDIUM     |
 
-**Risk**
+**Risk** **HIGH**
 
 |        |        | RISK   |              |        |
 |--------|--------|:------:|:------------:|:------:|
 |        | HIGH   |        |              |        |
-|Impact  | MEDIUM |        |              |        |
+|Impact  | MEDIUM |        |              |   X     |
 |        | LOW    |        |              |        |
 |        |        | LOW    | MEDIUM       | HIGH   |
 |        |        |        | Likelihood   |        |
-
-### Mitigation
 
 ## SQL Injection: dump whole db <a name="sql_injection_whole"></a>
 L'endpoint */rest/products/search?q=\** per la ricerca dei prodotti è vulnerabile alle boolean-based blind sql injections.
@@ -205,24 +201,23 @@ il tool automatico *sqlmap.py*, passando come input [request.txt](payloads/reque
 
 |   | Skill Level   | Opportunity   | Ease of Discovery   | Ease of Exploit   | Mean   | Label   |
 |---|:-------------:|:-------------:|:-------------------:|:-----------------:|:------:|:-------:|
-|   |               |               |                     |                   |        |         |
+|   |         9      |       9        |         9            |         9          |   9     |   HIGH      |
 
 **Impact**
 
 |   | Loss of Confidentiality   | Loss of Integrity   | Financial Damage   | Privacy Violation   | Mean   | Label |
 |---|:-------------------------:|:-------------------:|:------------------:|:-------------------:|:------:|:-----:|
-|   |                           |                     |                    |                     |        |       |
+|   |              9             |           9          |          9          |         9            |   9     |   HIGH    |
 
-**Risk**
+**Risk** **CRITICAL**
 
 |        |        | RISK   |              |        |
 |--------|--------|:------:|:------------:|:------:|
-|        | HIGH   |        |              |        |
+|        | HIGH   |        |              |    X    |
 |Impact  | MEDIUM |        |              |        |
 |        | LOW    |        |              |        |
 |        |        | LOW    | MEDIUM       | HIGH   |
 |        |        |        | Likelihood   |        |
-### Mitigation
 
 ## Improper input validation: register as admin <a name="input_validation_admin"></a>
 ### Description
@@ -249,24 +244,23 @@ dalla lista di utenti in /administration.
 
 |   | Skill Level   | Opportunity   | Ease of Discovery   | Ease of Exploit   | Mean   | Label   |
 |---|:-------------:|:-------------:|:-------------------:|:-----------------:|:------:|:-------:|
-|   |               |               |                     |                   |        |         |
+|   |       9        |      9         |          9           |         9          |   9     |    HIGH     |
 
 **Impact**
 
 |   | Loss of Confidentiality   | Loss of Integrity   | Financial Damage   | Privacy Violation   | Mean   | Label |
 |---|:-------------------------:|:-------------------:|:------------------:|:-------------------:|:------:|:-----:|
-|   |                           |                     |                    |                     |        |       |
+|   |             7              |          7           |         9           |        9             |   8     |   HIGH    |
 
-**Risk**
+**Risk** **CRITICAL**
 
 |        |        | RISK   |              |        |
 |--------|--------|:------:|:------------:|:------:|
-|        | HIGH   |        |              |        |
+|        | HIGH   |        |              |    X    |
 |Impact  | MEDIUM |        |              |        |
 |        | LOW    |        |              |        |
 |        |        | LOW    | MEDIUM       | HIGH   |
 |        |        |        | Likelihood   |        |
-### Mitigation
 
 # Note sulla Risk Rating Methodology adottata <a name="risk_rating_notes"></a>
 Per il Risk Rating è stata usata la [metodologia Owasp](https://owasp.org/www-community/OWASP_Risk_Rating_Methodology), usando per il calcolo della likelihood e dell'impact solo i campi ritenuti più
@@ -275,7 +269,7 @@ In particolare il significato di ciascun parametro è riportato di seguito
 
 **Likelihood**
 * *Skill Level* \
-    Stima della *skill* dell'attaccante per poter sfruttare la vulnerabilità
+    Quanto è skillato un possibile attaccante. Viene considerato il massimo (penetration testing skills)
 * *Opportunity* \
     Risorse necessarie (potenza di calcolo, tempo, persone) per trovare e sfruttare la vulnerabilità
 * *Ease of Discovery* \
@@ -289,7 +283,7 @@ In particolare il significato di ciascun parametro è riportato di seguito
 * *Loss of Integrity* \
     Quanti dati possono essere corrotti
 * *Financial Damage* \
-    Stima del danno economico per l'azienda in seguito all'exploit
+    Stima del danno economico per l'azienda
 * *Privacy Violation* \
     Quanto la privacy degli utenti viene violata
 
